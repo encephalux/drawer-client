@@ -5,8 +5,13 @@
  */
 
 @import "dpml";
+@import "atoms/button";
+@import "atoms/push_button";
+@import "atoms/form/fields/short_text";
 @import "molecules/notification";
 @import "molecules/loading_frame";
+@import "molecules/scalable_menu";
+@import "molecules/popup";
 @import "ova/molecules/toolbar";
 
 body {
@@ -23,12 +28,55 @@ body {
       height: 100%;
 
       .draw-zone {
+        .relative;
+        z-index: 1;
         width: 100%;
+        padding-top: var(--default-padding);
+
+        button, .drawing-board-control-size .drawing-board-control-inner {
+          .remove-native;
+        }
       }
 
-      .toolbar {
+      .toolbar-slot {
+        .relative;
+        z-index: 2;
         color: white;
         background: @primary;
+        padding: 0 var(--default-gap);
+
+        .toolbar {
+
+          > .inner {
+            overflow: unset;
+            padding-top: var(--default-gap);
+          }
+        }
+
+        .toolbar-item {
+          .flex-h-center;
+          .flex-align-center;
+          width: 32px;
+          height: 32px;
+          cursor: pointer;
+
+          &.menu {
+            .relative;
+
+            .scalable-menu {
+              .absolute(0, unset, 0, unset);
+              color: @primary;
+            }
+          }
+
+          &:last-child {
+            margin-bottom: var(--default-gap);
+          }
+
+          &:hover {
+            background: rgba(255,255,255, .08);
+          }
+        }
       }
     }
 

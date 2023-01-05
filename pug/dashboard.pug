@@ -1,13 +1,16 @@
 extends templates/page
 
 block append head
+    link(rel="stylesheet" href="/assets/lib/drawingboard/dist/drawingboard.min.css")
     link(rel="stylesheet" href="/assets/css/releases/dashboard.min.css?t="+Math.random())
 
 block append body
     .inner
-        .draw-zone
+        .draw-zone#draw-zone
         .toolbar-slot
 
 
 block append scripts
+    script(src="/assets/lib/jquery.js" type="text/javascript")
+    script(src="/assets/lib/drawingboard/dist/drawingboard.min.js" type="text/javascript")
     script(src="/assets/js/releases/dashboard.min.js" type="text/javascript")
