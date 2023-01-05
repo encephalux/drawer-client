@@ -1,0 +1,96 @@
+/** [Ova Assistant]
+ * Date: 2022-02-10 20:30:09
+ * Author: ova
+ * Description: 
+ */
+
+@import "../atoms/page_overlay";
+
+@closer-size: 32px;
+
+@keyframes closer_movement {
+  from {
+    transform: scale(.01);
+    opacity: .3;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fade_in_inner {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.@{project-class}.popup {
+  .absolute();
+  display: none;
+
+  > .wrapper {
+    .relative;
+    .flex-v;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 8px;
+    border-radius: var(--default-border-radius);
+    overflow: hidden;
+    animation: fade_in_inner .3s ease-in-out backwards;
+
+    > .header {
+      .flex-h-between;
+      .flex-align-center;
+      padding: 0 0 max(var(--default-padding), 10px);
+
+      .badge {
+        .ellipsis;
+        background: @opaque-primary-light;
+        max-width: calc(100% - @closer-size - 10px);
+        border-radius: var(--default-border-radius);
+      }
+
+      > .closer {
+        .circle(@closer-size);
+        background: @grey;
+        margin-left: 10px;
+      }
+    }
+
+    > .inner {
+      background: white;
+      padding: var(--default-padding);
+      border-radius: var(--default-border-radius);
+    }
+  }
+
+  &.active {
+    .flex-h-center;
+    .flex-align-center;
+
+    > .wrapper > .header > .closer {
+      animation: closer_movement .3s .2s ease-in-out backwards;
+    }
+  }
+
+  &.hide, &.slowly-removable-remove {
+    opacity: 0;
+    transition: opacity .3s .1s ease-in;
+
+    > .wrapper {
+      opacity: 0;
+      transition: opacity .3s .1s ease-in;
+
+      > .header > .closer {
+        transform: scale(.01);
+        transition: transform .15s cubic-bezier(.88,.18,.19,1.05);
+      }
+    }
+  }
+}

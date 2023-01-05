@@ -1,0 +1,46 @@
+/** [Ova Assistant]
+ * Date: 2022-10-26 22:57:08
+ * Author: ova
+ * Description: 
+ */
+
+.ova.data-list-toolbar {
+  transition: height 1s ease-in;
+
+  > .inner {
+    .flex-h;
+    .flex-align-center;
+
+    .toolbar-item {
+
+      &:not(:last-child) {
+        margin-right: 13px;
+      }
+
+      &.searcher {
+        background: @light-background;
+        width: 100%;
+        max-width: 640px;
+        padding: 6px 8px;
+        border-radius: var(--default-border-radius);
+
+        > .inner {
+          .flex-h;
+          .flex-align-center;
+
+          .field {
+            width: 100%;
+
+            &, input {
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .button.icon {
+      background: @light-background;
+    }
+  }
+}

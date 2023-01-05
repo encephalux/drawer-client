@@ -1,0 +1,71 @@
+
+.@{project-class}.notification {
+  .flex-v;
+  .absolute(-170px, unset, unset, unset);
+  z-index: @notification-z-index;
+  background: white;
+  min-width: 270px;
+  width: 380px;
+  max-width: 95%;
+  max-height: 170px;
+  opacity: 0;
+  overflow: hidden;
+  border-radius: @atom-border-radius;
+  box-shadow: 0 0 17px rgba(0,0,0, .3417);
+  will-change: top;
+
+  &.active {
+    top: 20px;
+    opacity: 1;
+    transition-property: top, opacity;
+    transition-duration: .17s;
+    transition-timing-function: cubic-bezier(.12,.82,.22,.96);
+
+    .header .closer {
+      transform: scale(1);
+      transition: transform .1s .3s linear;
+    }
+  }
+
+  &.destruct {
+    opacity: 0;
+    top: -170px;
+    transition-property: top, opacity;
+    transition-duration: .3s;
+    transition-delay: .2s;
+    transition-timing-function: cubic-bezier(1,.13,.5,.95);
+
+    .header .closer {
+      transform: scale(.01);
+      transition: transform .2s cubic-bezier(.88,.18,.19,1.05);
+    }
+  }
+
+  .header {
+    .flex-h-end;
+    background: white;
+    padding: @default-padding @default-padding 0;
+
+    .closer {
+      .flex-h-center;
+      .flex-align-center;
+      color: rgba(0,0,0, .6);
+      background: rgba(223,223,223);
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      will-change: transform;
+      transform: scale(.01);
+    }
+  }
+
+  .body {
+    .flex-v-center;
+    .flex-align-center;
+    color: rgba(0,0,0, .6784);
+    min-height: 40px;
+    padding: 0 @default-padding @default-padding;
+  }
+}

@@ -1,0 +1,16 @@
+.ova.collapsible {
+
+  &:not(.deactivated) {
+    .relative;
+    height: @default-collapsible-initial-height;
+    overflow-y: hidden;
+    transition: height .3s linear;
+  }
+
+  &.deactivated {
+
+    .rocker-container{
+      display: none;
+    }
+  }
+}

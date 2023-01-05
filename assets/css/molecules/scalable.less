@@ -1,0 +1,50 @@
+/** [Ova Assistant]
+ * Date: 2022-12-15 18:55:31
+ * Author: ova
+ * Description: 
+ */
+
+@import "../ova/molecule";
+
+:root {
+  --scalable-closer-width: 20px;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.@{project-class}.molecule.scalable {
+  background: white;
+  padding: var(--scalable-closer-width);
+  border-radius: var(--default-border-radius);
+  box-shadow: 0 0 13px @shadow-color;
+  transform-origin: 100% 0;
+  animation: scaleIn .16s cubic-bezier(.73,.31,.23,.94);
+
+  > .inner {
+    .flex-v;
+
+    > .scalable-closer {
+      .circle(var(--scalable-closer-width));
+      .absolute(8px, unset, 8px, unset);
+      background: @primary-light;
+    }
+  }
+
+  &.hide {
+    transform: scale(0);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: .16s;
+    transition-timing-function: cubic-bezier(.73,.31,.23,.94);
+  }
+}

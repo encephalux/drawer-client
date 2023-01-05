@@ -1,0 +1,29 @@
+/** [Ova Assistant]
+ * Date: 2022-11-28 18:39:05
+ * Author: ova
+ * Description: 
+ */
+
+@import "../atoms/button";
+@import "../atoms/progress_bar";
+
+.@{project-class}.molecule.upload-monitor {
+
+  > .inner {
+    padding: calc(.666666 * var(--default-padding));
+    border-radius: var(--default-border-radius);
+
+    .label {
+      margin-bottom: calc(.666666 * var(--default-padding));
+    }
+
+    .progress-bar {
+      width: 100%;
+      margin-bottom: calc(.578777 * var(--default-padding));
+    }
+
+    .cancel-btn-slot {
+      .flex-h-end;
+    }
+  }
+}

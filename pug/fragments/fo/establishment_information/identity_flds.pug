@@ -1,0 +1,9 @@
+include ../../../atoms/form/fields/short_text
+include ../../../atoms/form/fields/dynamic_select
+
++dynamic-select(type="text" name="_establishment_type" placeholder="Type d'établissement")
+.wholesaler-type
+    +select(name="_wholesaler_type")
+        option(value="distributor") Distributeur
+        option(value="depositary") Dépositaire
++short-text(type="text" name="_name" placeholder="Nom")

@@ -1,0 +1,21 @@
+@import "core";
+@import "loadingframe";
+@import "../layouts/cards_layout";
+@import "../layouts/tabs_layout";
+@import "../animations";
+
+.ova.otabulator {
+  .flex-v;
+
+  .tabulator {
+    height: 100%;
+    margin: 0;
+    overflow: auto;
+  }
+
+  .loading-frame {
+    .absolute();
+    z-index: 5;
+    background: rgba(255,255,255, .7);
+  }
+}

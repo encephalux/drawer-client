@@ -1,0 +1,13 @@
+doctype html
+html(lang=lang)
+    head
+        include ../molecules/head
+        link(rel="stylesheet" href="/assets/lib/ui_icons/css/uicons-regular-rounded.min.css")
+        block head
+
+    body
+        .body
+            block body
+
+        script(type="text/javascript" src="/assets/lib/moment/moment-with-locales.min.js")
+        block scripts

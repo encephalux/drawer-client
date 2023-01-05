@@ -1,0 +1,19 @@
+include ../atoms/form/fields/short_text
+include ../atoms/push_button
+include loading_frame
+
+mixin login-form(_password_reset)
+    div(class=process.env.APP_CSS_CLASS).molecule.login-form
+        .inner
+            .form
+                form
+                    .row
+                        +short-text()(type="text" name="_identifier" placeholder="Identifiant")
+                    .row
+                        +short-text()(type="password" name="_password" placeholder="Mot de passe")
+                    .row.submitter
+                        +push-button.submit Connexion
+            if _password_reset
+                .password-reset
+                    a(href="/password-reset") J'ai oublié mon mot de passe
+            +loading-frame

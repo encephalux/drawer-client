@@ -1,0 +1,68 @@
+/** [Ova Assistant]
+ * Date: 2021-06-14 07:15:14
+ * Author: ova
+ * Description: 
+ */
+
+@import "../../../ova/molecules/collapsible";
+
+@messenger-bg: rgb(230, 57, 70);
+
+.@{project-class}.field {
+  .flex-h;
+  width: 100%;
+  padding: 4px 6px;
+  border-radius: @atom-border-radius;
+
+  > .inner {
+    .flex-v;
+    .relative;
+    width: 100%;
+  }
+
+  .error-messenger {
+    .absolute(100%, 0, 0, unset);
+    z-index: 2;
+    max-width: 100%;
+    font-size: .8em;
+
+    &.in-flow {
+      position: unset;
+      z-index: unset;
+    }
+
+    &.collapsed {
+      height: 0;
+    }
+
+    > .inner {
+      color: white;
+      background: @messenger-bg;
+      padding: 5px;
+    }
+  }
+
+  &.bordered {
+    border: solid 1px;
+
+    &.primary {
+      color: @primary;
+      border-color: @primary-light;
+    }
+
+    &.secondary {
+      border-color: @secondary;
+    }
+
+    &.grey {
+      border: solid 2px @grey;
+    }
+  }
+
+  &.messenger-on-top {
+
+    .error-messenger {
+      .absolute(unset, 0, 0, 100%);
+    }
+  }
+}

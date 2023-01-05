@@ -1,0 +1,8 @@
+mixin file(_label)
+    label(class=[process.env.APP_CSS_CLASS, "atom", "field", "file", attributes.name])
+        .inner
+            a(class=[process.env.APP_CSS_CLASS, attributes.class]).button
+                .label= _label
+                .badge
+                    span.icofont-attachment
+            input&attributes({type: "file", name: attributes.name})

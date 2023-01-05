@@ -1,0 +1,28 @@
+/** [Ova Assistant]
+ * Date: 2022-10-09 08:37:25
+ * Author: ova
+ * Description: 
+ */
+
+.@{project-class}.atom.title {
+  .relative;
+  display: inline-block;
+  padding: max(6px, var(--default-padding)) 0;
+  margin-bottom: @default-padding;
+
+  &.interactive {
+    &::before {
+      .absolute(unset, 0, unset, 0);
+      content: " ";
+      background: @primary-grey;
+      width: 44%;
+      height: 2px;
+      border-radius: @default-border-radius;
+      transition: width .24s ease-out;
+    }
+
+    &:hover::before {
+      width: 74%;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+/** [Ova Assistant]
+ * Date: 2022-10-09 08:55:45
+ * Author: ova
+ * Description: 
+ */
+
+form {
+
+  .row {
+    .flex-h;
+    margin-bottom: @default-padding;
+
+    @media (max-width: 640px) {
+      .flex-v;
+    }
+  }
+
+  .col {
+    padding: 8px;
+  }
+
+  .field {
+
+    &:not(:last-child) {
+      margin-bottom: var(--default-gap);
+    }
+
+    &:not(.checkbox) {
+      background: @light-background;
+    }
+  }
+}

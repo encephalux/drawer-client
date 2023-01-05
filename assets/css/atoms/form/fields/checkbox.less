@@ -1,0 +1,54 @@
+/** [Ova Assistant]
+ * Date: 2022-11-04 10:21:52
+ * Author: ova
+ * Description: 
+ */
+
+@import "field";
+
+@checkbox-width: 32px;
+.@{project-class}.atom.field.checkbox {
+
+  > .inner {
+    .flex-h;
+    .flex-align-center;
+    border-radius: var(--default-border-radius);
+
+    > .icon {
+      .flex-h-center;
+      .flex-align-center;
+      max-width: @checkbox-width;
+      max-height: @checkbox-width;
+      padding: 4px;
+      border: solid 1px rgba(46,49,115, .129);
+      border-radius: var(--default-border-radius);
+
+      span {
+        .fi-hiding;
+        .fi-hide;
+        color: rgba(0,0,0, .292);
+      }
+    }
+
+    .label {
+      .ellipsis;
+      max-width: 100%;
+      margin-left: 11px;
+    }
+  }
+
+  &:hover {
+
+    > .inner .icon span {
+      .fi-show;
+    }
+  }
+
+  &.checked {
+
+    > .inner .icon span {
+      .fi-show;
+      color: @primary;
+    }
+  }
+}

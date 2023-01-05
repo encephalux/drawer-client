@@ -1,0 +1,43 @@
+/** [Ova Assistant]
+ * Date: 2022-07-01 15:03:58
+ * Author: ova
+ * Description: 
+ */
+
+@import "dpml";
+@import "molecules/notification";
+@import "molecules/loading_frame";
+@import "ova/molecules/toolbar";
+
+body {
+
+  > .body {
+    .relative;
+    z-index: 1;
+    background: white;
+
+    > .inner {
+      .relative;
+      z-index: 1;
+      .flex-h;
+      height: 100%;
+
+      .draw-zone {
+        width: 100%;
+      }
+
+      .toolbar {
+        color: white;
+        background: @primary;
+      }
+    }
+
+    > .loading-frame {
+      z-index: 2;
+      background: rgba(255, 255, 255, .349);
+    }
+  }
+
+  > .popup {
+  }
+}

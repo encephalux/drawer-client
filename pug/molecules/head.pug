@@ -1,0 +1,23 @@
+meta(charset="utf-8")
+meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+meta(name="description" content=description)
+title= title + " - " + process.env.SITE_TITLE
+link(rel="preload" href="/assets/media/logo.webp" as="image")
+link(rel="preload" href="/assets/lib/fonts/Montserrat/Montserrat-Regular.ttf" as="font" crossorigin)
+block preload
+script(type="text/javascript").
+    window.env = {
+        PAGE_ID: "#{page_id}",
+        RUN_MODE: "#{process.env.RUN_MODE}",
+        LANG: "#{lang}",
+        MAIN_URL_BASE: "#{process.env.MAIN_URL_BASE}",
+        API_URL_BASE: "#{process.env.API_URL_BASE}",
+        APP_URL_BASE: "#{process.env.APP_URL_BASE}",
+        APP_CSS_CLASS: "#{process.env.APP_CSS_CLASS}",
+        USER: {
+            api_url_base: "#{user_data && `${process.env.API_URL_BASE}/api/${user_data.use_case === "administrators" ? "admin":"user"}`}",
+            url_node: "!{user_data && (user_data.use_case === "administrators" ? "admin":"user")}",
+            type: "!{user_data && user_data.use_case}",
+            identifier: "!{user_data && user_data._identifier}"
+        }
+    };

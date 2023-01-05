@@ -1,0 +1,43 @@
+extends templates/page
+include atoms/button
+include atoms/push_button
+include molecules/description_banner
+include molecules/loading_frame
+
+block append head
+    link(rel="stylesheet" href="/assets/css/releases/email_confirmation.min.css")
+    script(type="text/javascript").
+        window.env.token = "#{token}";
+        window.env.payload = !{JSON.stringify(payload)};
+
+block append body
+    include molecules/header
+    +description-banner
+        h1.title Confirmation d'email
+        if token
+            p Veuillez patienter pendant que nous confirmons votre email
+        else if payload
+            p Lien expiré
+        else
+            p Lien invalide
+    .v-block.content(class=(token ? "valid":"invalid"))
+        .page-inner
+            .page-form.indication
+                if token
+                    .inner
+                    +loading-frame(!0)
+                else if payload
+                    p Le lien utilisé est arrivé à expiration
+                    p Vous pouvez cliquer sur le bouton ci-dessous pour obtenir un nouveau lien
+                    .action
+                        +push-button.filled.primary.resend Envoyer un nouveau lien
+                else
+                    p Votre lien de confirmation n'est pas valide
+                    p Veuillez vous connecter pour en obtenir un nouveau
+                    .action
+                        +button(href=`/${lang}/user/login`).filled.primary Se connecter
+
+    include molecules/footer
+
+block append scripts
+    script(type="text/javascript" src="/assets/js/releases/email_confirmation.min.js")

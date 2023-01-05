@@ -1,0 +1,59 @@
+/** [Ova Assistant]
+ * Date: 2022-11-04 18:14:26
+ * Author: ova
+ * Description: 
+ */
+
+@import "field";
+@import "../../../molecules/notification";
+
+.@{project-class}.atom.field.options {
+
+  > .inner {
+    .flex-v;
+
+    .label {
+      align-self: flex-start;
+      background: @light-background;
+      padding: 3px 5px;
+      border-radius: var(--default-border-radius);
+    }
+
+    .options-list {
+      .flex-h;
+      flex-wrap: wrap;
+
+      .option {
+        .relative;
+        z-index: 2;
+        padding: 3px 5px;
+        cursor: pointer;
+        margin: 4px;
+        border-radius: var(--default-border-radius);
+
+        &::before {
+          .absolute(unset, 20%, unset, 1px);
+          content: " ";
+          z-index: 1;
+          background: @primary;
+          width: 60%;
+          height: 2px;
+          border-radius: var(--default-border-radius);
+          transform-origin: 50% 50%;
+          transform: scale(0);
+          transition: transform .2s cubic-bezier(.57,.82,.27,.9);
+        }
+
+        &.selected::before {
+          transform: scale(1);
+        }
+
+        &:focus {
+          border: dashed 1px @primary;
+          outline: none;
+          padding-bottom: 1px;
+        }
+      }
+    }
+  }
+}

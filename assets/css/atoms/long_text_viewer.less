@@ -1,0 +1,29 @@
+/** [Ova Assistant]
+ * Date: 2022-11-25 12:15:23
+ * Author: ova
+ * Description: 
+ */
+
+.@{project-class}.atom.long-text-viewer {
+
+  > .inner {
+    .relative;
+
+    .text {
+      display: none;
+      .absolute(0, 0, unset, unset);
+      min-width: 100%;
+      box-shadow: 0 0 11px @light-background;
+
+      .closer {
+        .absolute(5px, unset, 5px, unset);
+        .circle(30px);
+        background: @light-background;
+      }
+
+      p {
+        padding: var(--default-padding);
+      }
+    }
+  }
+}

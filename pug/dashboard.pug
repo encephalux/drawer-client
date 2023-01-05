@@ -1,0 +1,13 @@
+extends templates/page
+
+block append head
+    link(rel="stylesheet" href="/assets/css/releases/dashboard.min.css?t="+Math.random())
+
+block append body
+    .inner
+        .draw-zone
+        .toolbar-slot
+
+
+block append scripts
+    script(src="/assets/js/releases/dashboard.min.js" type="text/javascript")

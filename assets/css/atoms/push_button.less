@@ -1,0 +1,30 @@
+/** [Ova Assistant]
+ * Date: 2022-07-07 00:45:40
+ * Author: ova
+ * Description: 
+ */
+
+@import "../ova/atom";
+@import "button";
+
+.@{project-class}.atom.push-button {
+  .relative;
+
+  > .layer.loading {
+    .absolute;
+    display: none;
+
+    img {
+      width: 25px;
+    }
+  }
+
+  &.loaded {
+    cursor: default;
+
+    > .layer.loading {
+      .flex-h-center;
+      .flex-align-center;
+    }
+  }
+}

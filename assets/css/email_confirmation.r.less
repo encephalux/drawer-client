@@ -1,0 +1,31 @@
+/** [Ova Assistant]
+ * Date: 2022-09-15 22:03:08
+ * Author: ova
+ * Description: 
+ */
+
+@import "dpml";
+@import "atoms/push_button";
+@import "molecules/loading_frame";
+@import "molecules/notification";
+
+.v-block.content {
+  padding-top: @v-block-padding;
+  padding-bottom: @v-block-padding;
+
+  .indication {
+    .relative;
+    .flex-v-center;
+    .flex-align-center;
+    min-height: 40vh;
+    text-align: center;
+
+    h2 {
+      margin-bottom: @default-padding;
+    }
+
+    .action {
+      margin-top: @default-padding;
+    }
+  }
+}

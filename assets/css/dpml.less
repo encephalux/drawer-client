@@ -1,0 +1,111 @@
+@import "core";
+@import "normalizer";
+@import "vars";
+@import "fonts";
+@import "atoms/h";
+@import "atoms/p";
+@import "atoms/button";
+@import "atoms/link";
+@import "atoms/ui_icons";
+@import "atoms/page_overlay";
+@import "molecules/form";
+
+:root {
+  font-size: 15px;
+}
+
+* {
+  font-family: OpenSansLight, sans-serif;
+}
+
+body {
+  .relative;
+  min-width: 290px;
+  height: 100vh;
+  overflow: hidden;
+  color: #1A1B40;
+
+  @media (max-width: 1440px) {
+    //font-size: .95em;
+  }
+
+  @media (max-width: 596px) {
+    font-size: .85em;
+  }
+}
+
+body > .body {
+  .relative;
+  height: 100%;
+  overflow: auto;
+}
+
+.v-block {
+  padding: 0 @default-padding;
+
+  > .page-inner {
+    max-width: @page-inner-width;
+    padding: @default-padding;
+    margin: auto;
+  }
+}
+
+h1.title {
+  font-size: 1.2em;
+  margin-bottom: (1.5 * @default-padding);
+}
+
+.ghosted {
+   opacity: 0;
+}
+
+.has-ghosted {
+  .relative;
+
+  > :not(.ghosted) {
+    .absolute(0, 0, unset, unset);
+  }
+}
+
+.page-form {
+  width: 600px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.note {
+  color: @primary;
+  background: @primary-light;
+  padding: var(--default-padding);
+  border-left: solid 2px @primary;
+  border-right: solid 2px @primary;
+  border-radius: var(--default-border-radius);
+}
+
+div {
+  scrollbar-color: rgba(0,0,0, .3128);
+
+  &:hover {
+    scrollbar-color: lighten(rgb(4, 21, 31), 8%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: @scroll-bar-width;
+  height: @scroll-bar-width;
+  margin-left: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0, .3128);
+  border-radius: var(--default-border-radius);
+
+  &:hover {
+    background: lighten(rgb(4, 21, 31), 8%);
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: @light-background;
+  border-radius: var(--default-border-radius);
+}

@@ -1,0 +1,22 @@
+{
+  "name": "dpmlbo",
+  "version": "1.0.0",
+  "scripts": {},
+  "dependencies": {
+    "cookie": "^0.5.0",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.7.5",
+    "ova_cacheable": "^2.0.1",
+    "ova_core": "^2.0.2",
+    "ova_env": "^1.0.0",
+    "ova_errors": "^4.0.0",
+    "ova_orm_config": "^1.0.0",
+    "ova_pugstack": "^1.0.1",
+    "ova_session": "^4.0.0",
+    "ova_sniffer": "^3.0.0",
+    "pg": "^8.7.3"
+  }
+}

@@ -1,0 +1,17 @@
+
+mixin dynamic-select()
+    div(class=[process.env.APP_CSS_CLASS, attributes.name]).atom.field.dynamic-select
+        .inner
+            input(type="hidden" class="hidden-input" name=attributes.name)
+            .base
+                .edition-block
+                    input(class="label")&attributes(attributes)
+                    +button.icon.filled.cleaner
+                        span.fi.fi-rr-delete
+                +button.icon.list-rocker.expand
+                    .collapse-icon
+                        span.fi.fi-rr-angle-up
+                    .expand-icon
+                        span.fi.fi-rr-angle-down
+            div(class=process.env.APP_CSS_CLASS).ova.collapsible.error-messenger.collapsed
+                .inner

@@ -1,0 +1,43 @@
+/** [Ova Assistant]
+ * Date: 2021-09-03 20:57:20
+ * Author: ova
+ * Description: 
+ */
+
+@keyframes fade_in_page_overlay {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: .4;
+  }
+}
+
+@keyframes fade_in_page_overlay_r {
+  from {
+    opacity: .7;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.@{project-class}.page-overlay {
+  .absolute();
+  display: none;
+  background: @primary;
+  opacity: 0;
+
+  &.active {
+    display: block;
+    opacity: .4;
+    animation: fade_in_page_overlay .17s linear;
+  }
+
+  &.hide, &.slowly-removable-remove {
+    opacity: 0;
+    transition: opacity .3s .17s linear;
+  }
+}

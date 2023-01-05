@@ -1,0 +1,38 @@
+/** [Ova Assistant]
+ * Date: 2022-11-24 22:35:02
+ * Author: ova
+ * Description: 
+ */
+
+.@{project-class}.atom.state {
+
+  > .inner {
+    .flex-h;
+    .flex-align-center;
+    background: @light-background;
+    padding: 6px;
+    border-radius: var(--default-border-radius);
+
+    .ball {
+      .circle(20px);
+    }
+  }
+
+  &:not(.no-label) {
+    .ball {
+      margin-right: 8px;
+    }
+  }
+
+  &.success .ball {
+    background: rgb(4,207,0);
+  }
+
+  &.fail .ball {
+    background: rgb(247,0,0);
+  }
+
+  &.progress .ball {
+    background: rgb(247,127,0);
+  }
+}

@@ -1,0 +1,8 @@
+include ../loading_frame
+
+mixin tab-pane(_id)
+    div(class=["ova", process.env.APP_CSS_CLASS, "molecule", "tab-pane", _id])&attributes(attributes)
+        if block
+            block
+        else
+            .inner

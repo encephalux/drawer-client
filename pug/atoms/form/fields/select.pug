@@ -1,0 +1,9 @@
+include ../../fieldnotice
+
+mixin select()
+    div(class=[process.env.APP_CSS_CLASS, "atom", "field", "select", attributes.name])
+        .inner
+            select&attributes(attributes)
+                if block
+                    block
+            +field-notice

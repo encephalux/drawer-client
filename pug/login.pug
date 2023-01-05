@@ -1,0 +1,30 @@
+extends templates/page
+include atoms/push_button
+include atoms/form/fields/short_text
+include molecules/loading_frame
+
+block head
+    link(rel="stylesheet" href="/assets/css/releases/user_login.min.css?t=" + Math.random())
+
+block append body
+    .v-block.user-login-form
+        .page-inner
+            .logo
+                .img
+                    img(src="/assets/media/logo.webp" alt="")
+                .app-name
+                    span Drawoo
+            .form
+                form
+                    .row
+                        +short-text()(type="email" name="_email" placeholder="Email")
+                    .row
+                        +short-text()(type="password" name="_password" placeholder="Mot de passe")
+                    .row.submit
+                        +push-button.filled.primary.submit Connexion
+            .alternative
+                p Vous n'avez pas de compte? #[a(href="/"+lang+"/register") Créer votre compte]
+            +loading-frame
+
+block scripts
+    script(type="text/javascript" src="/assets/js/releases/user_login.min.js?t=" + Math.random())

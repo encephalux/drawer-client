@@ -1,0 +1,8 @@
+include ../../atoms/form/fields/shorttext
+include ../../atoms/button
+
+mixin submitable-field(_class)
+    .ar.submitable-field
+        +short-text(_class)&attributes(attributes)
+        +button("S'inscrire").submitter.primary
+

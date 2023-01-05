@@ -1,0 +1,8 @@
+include ../../fieldnotice
+
+mixin short-text()
+    // _type must be one them text, telephone, password, email, number, date
+    div(class=[process.env.APP_CSS_CLASS, "atom", "field", "short-text", attributes.name, attributes.class])
+        .inner
+            input&attributes(attributes)
+            +field-notice()

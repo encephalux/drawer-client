@@ -1,0 +1,114 @@
+@import "molecule";
+@import "atom";
+
+.null-padding-margin {
+  padding: 0;
+  margin: 0;
+}
+
+.flex-h {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-h-center {
+  .flex-h();
+  justify-content: center;
+}
+
+.flex-h-between {
+  .flex-h();
+  justify-content: space-between;
+}
+
+.flex-h-end {
+  .flex-h();
+  justify-content: flex-end;
+}
+
+.flex-h-around {
+  .flex-h();
+  justify-content: space-around;
+}
+
+.flex-h-evenly {
+  .flex-h();
+  justify-content: space-evenly;
+}
+
+.flex-v {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-v-center {
+  .flex-v();
+  justify-content: center;
+}
+
+.flex-v-between{
+  .flex-v();
+  justify-content: space-between;
+}
+
+.flex-v-end {
+  .flex-v();
+  justify-content: flex-end;
+}
+
+.flex-v-around {
+  .flex-v();
+  justify-content: space-around;
+}
+
+.flex-v-evenly {
+  .flex-v();
+  justify-content: space-evenly;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-align-start {
+  align-items: flex-start;
+}
+
+.flex-align-end {
+  align-items: flex-end;
+}
+
+.flex-align-stretch {
+  align-items: stretch;
+}
+
+.relative() {
+  position: relative;
+}
+
+.absolute(@top:0, @left:0, @right:0, @bottom:0) {
+  position: absolute;
+  top: @top;
+  left: @left;
+  right: @right;
+  bottom: @bottom;
+}
+
+.sticky(@top:0) {
+  position: sticky;
+  top: @top;
+}
+
+.fixed(@top:0, @left:0, @right:0, @bottom:0) {
+  position: fixed;
+  top: @top;
+  left: @left;
+  right: @right;
+  bottom: @bottom;
+}
+
+.ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

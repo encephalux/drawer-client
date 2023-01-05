@@ -1,0 +1,23 @@
+.zoom(@name, @from, @to) {
+  @keyframes @name {
+    from {
+      transform: scale(@from);
+    }
+
+    to {
+      transform: scale(@to);
+    }
+  }
+}
+
+.fade(@name, @from, @to) {
+  @keyframes @name {
+    from {
+      opacity: @from;
+    }
+
+    to {
+      opacity: @to;
+    }
+  }
+}

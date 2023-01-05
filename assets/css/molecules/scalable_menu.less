@@ -1,0 +1,26 @@
+/** [Ova Assistant]
+ * Date: 2022-12-16 10:53:00
+ * Author: ova
+ * Description: 
+ */
+
+@import "scalable";
+@import "menu";
+
+.@{project-class}.molecule.scalable-menu {
+
+  > .inner {
+    padding-right: calc(var(--scalable-closer-width)/2);
+
+    .menu > .inner {
+
+      > .item {
+        padding: 0;
+
+        &:not(:last-child) {
+          margin-bottom: var(--scalable-closer-width);
+        }
+      }
+    }
+  }
+}

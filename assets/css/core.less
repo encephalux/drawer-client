@@ -1,0 +1,45 @@
+/** [Ova Assistant]
+ * Date: 2022-09-23 10:42:41
+ * Author: ova
+ * Description: 
+ */
+
+@import "ova/core";
+
+.circle(@_width) {
+  width: @_width;
+  height: @_width;
+  border-radius: 50%;
+}
+
+.primary-light(@n) {
+  @val: rgba(46,49,115, @n);
+}
+
+.orange-light(@n) {
+  @val: rgba(247,127,0, @n);
+}
+
+.text-primary() {
+  color: @text-primary;
+}
+
+.text-secondary() {
+  color: @text-secondary;
+}
+
+.font-small() {
+  font-size: var(--font-small);
+}
+
+.font-normal() {
+  font-size: var(--font-normal);
+}
+
+.font-large() {
+  font-size: var(--font-large);
+}
+
+.text-bold() {
+  font-weight: 700;
+}

@@ -1,0 +1,7 @@
+mixin button(_label)
+    a(class=process.env.APP_CSS_CLASS).atom.button&attributes(attributes)
+        .inner
+            if block
+                block
+            else
+                span= _label

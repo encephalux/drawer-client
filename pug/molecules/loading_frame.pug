@@ -1,0 +1,4 @@
+mixin loading-frame (_active)
+    div(class=process.env.APP_CSS_CLASS class={active: _active}).ova.loading-frame
+        .inner
+            img(src="/assets/media/loading.svg" alt="")

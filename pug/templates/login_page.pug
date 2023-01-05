@@ -1,0 +1,18 @@
+extends page
+
+block append body
+    .v-block.login-form
+        .inner
+            .brand
+                .img.logo
+                    img(src="/assets/media/logo.webp" alt="DPML")
+                .block.name
+                    span DIRECTION DE LA PHARMACIE, DU MEDICAMENT ET DES LABORATOIRES
+
+            block form
+
+    .v-block.copyright
+        .inner
+            span Copyright © #{(new Date()).getFullYear()}
+            span(style="margin: 0 3px 0 17px;") |
+            span(style="padding: 5px;") SCHEEPHRA & PUA SERVICE

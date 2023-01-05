@@ -1,0 +1,34 @@
+/** [Ova Assistant]
+ * Date: 2022-10-08 17:30:31
+ * Author: ova
+ * Description: 
+ */
+
+@import "../dpml";
+@import "../molecules/notification";
+@import "../molecules/loading_frame";
+@import "../molecules/viewport";
+
+body {
+
+  > .body {
+    .relative;
+    z-index: 1;
+    background: white;
+
+    > .inner {
+      .relative;
+      z-index: 1;
+      .flex-h;
+      height: 100%;
+    }
+
+    > .loading-frame {
+      z-index: 2;
+      background: rgba(255, 255, 255, .349);
+    }
+  }
+
+  > .popup {
+  }
+}

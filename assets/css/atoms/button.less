@@ -1,0 +1,86 @@
+.@{project-class}.button {
+  .relative;
+  border-radius: @default-border-radius;
+  cursor: pointer;
+  user-select: none;
+
+  > .inner {
+    .flex-h;
+    .flex-align-center;
+    flex-wrap: nowrap;
+  }
+
+  &:not(.inline) {
+
+    > .inner {
+      padding: var(--button-padding);
+      border-radius: @default-border-radius;
+    }
+  }
+
+  &.filled {
+
+    &.primary {
+      color: @primary-text;
+      background: @primary;
+    }
+
+    &.secondary {
+      color: @primary-text;
+      background: @secondary;
+    }
+
+    &.light {
+      background: @light-background;
+    }
+
+    &.primary-light {
+      background: @primary-light;
+    }
+
+    &.grey {
+      background: @grey;
+    }
+
+    &.gradient {
+      color: white;
+      background: linear-gradient(to right, @primary, rgb(0, 104, 177));
+    }
+  }
+
+  &.bordered {
+    border-style: solid;
+    border-width: 1px;
+
+    &.primary {
+      color: @primary;
+      border-color: @primary-light;
+    }
+
+    &.light {
+      border-color: white;
+    }
+
+    &.dark {
+      border-color: black;
+    }
+  }
+
+  &.elevation {
+    box-shadow: 0 0 18px rgba(0,0,0, .7);
+  }
+
+  &.icon {
+
+    > .inner {
+      .flex-h-center;
+      .flex-align-center;
+      padding: 8px;
+    }
+  }
+
+  &.disabled {
+    opacity: .6;
+    cursor: default;
+  }
+}

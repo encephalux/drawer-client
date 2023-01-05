@@ -1,0 +1,7 @@
+include ../../fieldnotice
+
+mixin radio(_name, _label)
+    label(class=process.env.APP_CSS_CLASS).atom.field.radio(data-name=_class)
+    .inner
+        span= _label
+        input(type="radio")&attributes(attributes)

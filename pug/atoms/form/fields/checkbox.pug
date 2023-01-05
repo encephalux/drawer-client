@@ -1,0 +1,7 @@
+mixin checkbox(_label, _class)
+    label(class=[process.env.APP_CSS_CLASS, "atom", "field", "checkbox", attributes.name] class=_class)
+        input(type="checkbox")&attributes(attributes)
+        .inner
+            .checker
+                .inner
+            span= _label

@@ -1,0 +1,30 @@
+/** [Ova Assistant]
+ * Date: 2022-10-16 16:53:59
+ * Author: ova
+ * Description: 
+ */
+
+@import "../ova/layouts/data_list_layout";
+
+.@{project-class}.layout.data-list-layout {
+
+  &.empty {
+    width: 100%;
+    height: 100%;
+
+    .block.empty {
+      .flex-v-center;
+      .flex-align-center;
+      height: 100%;
+
+      img {
+        max-width: 100%;
+        opacity: .404;
+      }
+
+      p {
+        padding: @default-padding;
+      }
+    }
+  }
+}

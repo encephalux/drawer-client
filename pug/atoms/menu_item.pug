@@ -1,0 +1,7 @@
+mixin menu-item(_title)
+    a.menu-item&attributes(attributes)
+        .inner
+            if block
+                block
+            else if _title
+                span= _title

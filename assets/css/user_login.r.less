@@ -1,0 +1,84 @@
+/** [Ova Assistant]
+ * Date: 2022-07-01 15:03:43
+ * Author: ova
+ * Description: 
+ */
+
+@import "dpml";
+@import "atoms/push_button";
+@import "molecules/notification";
+@import "molecules/login_form";
+
+.v-block.user-login-form {
+  .relative;
+
+  > .page-inner {
+    .flex-v-center;
+    .flex-align-center;
+    padding: 10vh 0;
+
+    .logo {
+      .flex-v;
+      .flex-align-center;
+
+      .img {
+        margin-bottom: var(--default-gap);
+      }
+
+      img {
+        width: 100px;
+      }
+
+      .app-name {
+        font-size: 2em;
+      }
+    }
+
+    .form {
+      width: 600px;
+      max-width: 100%;
+
+      .row:not(:last-child) {
+        margin-bottom: 11px;
+      }
+
+      .field {
+        background: rgba(255,255,255, .2);
+        border: solid 2px rgba(245, 243, 240, 2);
+        margin-bottom: @default-padding;
+
+        .collapsible.messenger {
+          font-size: .87em;
+        }
+      }
+
+      .button.submitter {
+        color: white;
+        background: @primary;
+        border: none;
+        font-weight: bold;
+      }
+
+      .row.submitter {
+        margin-top: 24px;
+      }
+
+      .password-reset {
+        margin-top: (5 * @default-padding);
+        text-align: center;
+        font-size: .85em;
+      }
+    }
+  }
+}
+
+.alternative {
+  padding: @default-padding;
+  margin-top: @default-padding;
+  font-size: .9em;
+  text-align: center;
+
+  a {
+    text-decoration: underline;
+  }
+}

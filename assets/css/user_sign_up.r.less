@@ -1,0 +1,123 @@
+/** [Ova Assistant]
+ * Date: 2022-07-02 19:20:21
+ * Author: ova
+ * Description: 
+ */
+
+@import "dpml";
+@import "molecules/notification";
+@import "atoms/form/fields/short_text";
+@import "atoms/form/form";
+@import "atoms/push_button";
+
+.v-block.sign-up-form {
+  .relative;
+  padding: @v-block-padding @default-padding;
+
+  > .page-inner {
+    .relative;
+    .flex-v;
+    .flex-align-center;
+
+    .logo {
+      .flex-v;
+      .flex-align-center;
+
+      .img {
+        margin-bottom: var(--default-gap);
+      }
+
+      img {
+        width: 100px;
+      }
+
+      .app-name {
+        font-size: 2em;
+      }
+    }
+
+    .form {
+      width: 600px;
+      max-width: 100%;
+
+      .field-group {
+
+        > .title {
+          .relative;
+          display: inline-block;
+          padding: @default-padding 0;
+          margin-bottom: (3 * @default-padding);
+
+          &::before {
+            .absolute(unset, 0, unset, 0);
+            content: " ";
+            background: @black;
+            width: 44%;
+            height: 4px;
+            border-radius: @default-border-radius;
+            transition: width .24s ease-out;
+          }
+
+          &:hover::before {
+            width: 74%;
+          }
+        }
+
+        &:not(last-child) {
+          margin-bottom: (3 * @default-padding);
+        }
+      }
+
+      .field {
+        background: rgba(255,255,255, .2);
+        border: solid 2px rgba(245, 243, 240, 2);
+        margin-bottom: @default-padding;
+      }
+    }
+
+    .sign-in {
+      margin-top: var(--default-gap);
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    > .layer.succeeded {
+      .absolute;
+      display: none;
+      background: rgba(255,255,255, .6); //rgba(0,0,0, .2754);
+      border-radius: @default-border-radius;
+
+      > .inner {
+        color: white;
+        background: darken(@primary, 11%); //#61CE70; //rgba(255,255,255, .4);
+        max-height: 100%;
+        padding: (2 * @default-padding) @default-padding @default-padding;
+        border-radius: @default-border-radius;
+        overflow-y: auto;
+        text-align: center;
+
+        .success-text {
+          display: inline-block;
+          margin-bottom: @default-padding;
+          font-size: 1.23em;
+          font-weight: bold;
+        }
+
+        p {
+          line-height: 1.4em;
+
+          &.action {
+            margin-top: (2 * @default-padding);
+          }
+        }
+      }
+
+      &.active {
+        .flex-h-center;
+        .flex-align-center;
+      }
+    }
+  }
+}

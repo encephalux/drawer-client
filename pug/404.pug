@@ -1,0 +1,15 @@
+extends templates/page
+
+block append head
+    link(rel="stylesheet" href="/assets/css/releases/404.min.css")
+
+block append body
+    include molecules/dashboard/header
+    .v-block.illustration
+        .page-inner
+            p Désolé cette page n'existe pas
+            h1.code _____404_________________
+            h1.explicit ___________Page non trouvée__
+
+block append scripts
+    script(type="text/javascript" src="/assets/js/releases/404.min.js")

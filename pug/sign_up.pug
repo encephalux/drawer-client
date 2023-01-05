@@ -1,0 +1,50 @@
+extends templates/page
+
+include atoms/form/fields/short_text
+include atoms/button
+include atoms/push_button
+
+block append head
+    link(rel="stylesheet" href="/assets/css/releases/user_sign_up.min.css")
+
+block append body
+    .v-block.sign-up-form
+        .page-inner
+            .logo
+                .img
+                    img(src="/assets/media/logo.webp" alt="")
+                .app-name
+                    span Drawoo
+            .form
+                form
+                    .field-group
+                        .title Informations personnelles
+                        .fields
+                            +short-text(type="text" name="_last_name" placeholder="Nom")
+                            +short-text(type="text" name="_first_name" placeholder="Prénom(s)")
+                            +short-text(type="date" name="_birthday" placeholder="Date de naissance")
+                    .field-group
+                        .title Paramètres de connexion
+                        .fields
+                            +short-text(type="email" name="_email" placeholder="Email")
+                            +short-text(type="password" name="_password" placeholder="Mot de passe")
+                    .actions
+                        .inner
+                            +push-button.submitter.filled.primary
+                                span Créer
+            .sign-in
+                p Vous avez déjà un compte? !{`<a href="/fr/login">Connectez-vous</a>`}
+
+            .layer.succeeded
+                .inner
+                    span.success-text Votre compte a été créé avec succès!
+                    p Un mail de confirmation a été envoyé sur l'email que vous avez renseigné
+                    p Veuillez consulter votre boite et cliquer sur le lien pour valider votre compte
+                    //p Vous pouvez cliquer sur le bouton ci-dessous pour renvoyer le mail de confirmation
+                    //p.action
+                        +push-button.filled.primary
+                            span(style="transform: rotate(180deg);").icofont-ui-reply.prefix
+                            span Renvoyer le mail
+
+block append scripts
+    script(type="text/javascript" src="/assets/js/releases/user_sign_up.min.js")

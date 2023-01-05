@@ -1,0 +1,111 @@
+@project-class: dpml;
+
+// { Colors }
+
+@primary: rgb(46,49,115); //#2E3173;
+@opaque-primary-light: rgb(236, 234, 242);
+@primary-light: rgba(46,49,115, .089);
+@secondary: white;
+@primary-grey: #3F4059;
+
+@primary-text: rgb(198,198,198); //#c6c6c6
+
+@text-primary: rgb(26,27,64); // #1A1B40;
+@text-secondary: rgb(80,80,80); //#505050
+@meta-information-text-color: rgb(108, 108, 108); //#8a8a8a
+
+@light-background: rgba(0,0,0, .0311);
+@opaque-light-background: rgb(236,234,242);
+@page-body-background: rgb(237,240,242); //#edf0f2
+@shadow-color: rgba(0,0,0, .11157);
+
+@beige: #f6f4ea;
+@black: rgb(28, 35, 33);
+@blue-grey: rgb(231, 236, 239);
+
+@yellow: rgb(254, 189, 60); //#febd3c
+@grey: rgb(246,246,246); //#f5f3f0
+@grey: rgb(245, 243, 240); //#f5f3f0
+@red: #e12518;
+@green: #68BF43;
+@orange: rgb(247,127,0);
+
+// { Numeric }
+
+@main-menu-max-width: 310px;
+@header-z-index: 1000;
+@mouse-shield-z-index: 1000000;
+@page-overlay-z-index: @header-z-index + 5;
+@notification-z-index: 1000000000;
+
+@page-inner-width: 1200px;
+@page-inner-width-percent: 62.9%;
+@page-form-width: 600px;
+@default-gap: 11px;
+
+@default-border-radius: 8px;
+@atom-border-radius: @default-border-radius;
+
+@default-padding: 17px;
+@v-block-padding: 50px;
+@short-text-padding: 8px;
+@button-padding: 6px 9px;
+
+@default-collapsible-initial-height: 0;
+@header-height: 46px;
+
+@font-small: .88em;
+@font-normal: 1em;
+@font-large: 1.4em;
+
+@scroll-bar-width: 7px;
+
+// { Export to CSS }
+
+:root {
+  --notification-z-index: @notification-z-index;
+  --page-overlay-z-index: @page-overlay-z-index;
+  --header-z-index: @header-z-index;
+  --default-padding: @default-padding;
+  --v-block-padding: @v-block-padding;
+  --button-padding: @button-padding;
+  --atom-border-radius: @atom-border-radius;
+  --default-border-radius: @default-border-radius;
+  --short-text-padding: @short-text-padding;
+  --main-menu-width: 310px;
+  --default-gap: @default-gap;
+
+  --font-small: .88em;
+  --font-normal: 1em;
+  --font-large: 1.4em;
+
+  @media(max-width: 992px) {
+    --v-block-padding: calc(2* (@v-block-padding / 3)) ;
+    --default-padding: calc(@default-padding / 2);
+    --short-text-padding: calc(3 * (@short-text-padding / 4));
+  }
+}
+
+// { Togo gov colors }
+
+.null-block {
+  --e-global-color-primary: #6EC1E4;
+  --e-global-color-secondary: #54595F;
+  --e-global-color-text: #7A7A7A;
+  --e-global-color-accent: #61CE70;
+  --e-global-color-aef8f72: #006A9A;
+  --e-global-color-c7b407c: #146C53;
+
+  --e-global-color-1cb0752: #4054B2;
+  --e-global-color-58215eb3: #23A455;
+  --e-global-color-288f4495: #000;
+  --e-global-color-6c08e2e4: #FFF;
+  --e-global-color-52b8f7d1: #006A9A;
+  --e-global-color-10113dde: #D21B33;
+  --e-global-color-1d6c6e95: #146C53;
+  --e-global-color-7884dd3b: #FFCE15;
+  --e-global-color-63b4392a: #FF7B00;
+  --e-global-color-3b9fc265: #F3706A;
+  --e-global-color-28dfef21: #00C78D;
+  --e-global-color-1efa96d1: #5598C9;
+}

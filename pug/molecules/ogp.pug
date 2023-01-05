@@ -1,0 +1,3 @@
+mixin ogp(_entries)
+    each entry in _entries
+        meta(property=entry.property content=entry.content)

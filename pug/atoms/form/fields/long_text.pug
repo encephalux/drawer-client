@@ -1,0 +1,7 @@
+include ../../fieldnotice
+
+mixin long-text()
+    div(class=[process.env.APP_CSS_CLASS, "atom", "field", "long-text", attributes.name])
+        .inner
+            +field-notice
+            textarea&attributes(attributes)

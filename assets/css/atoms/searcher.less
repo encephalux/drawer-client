@@ -1,0 +1,30 @@
+/** [Ova Assistant]
+ * Date: 2022-08-07 14:30:29
+ * Author: ova
+ * Description: 
+ */
+
+@import "form/fields/short_text";
+
+.@{project-class}.atom.searcher {
+
+  > .inner {
+    .flex-h;
+    .flex-align-center;
+    padding-right: var(--short-text-padding);
+    border-radius: @atom-border-radius;
+
+    .short-text {
+      border: none;
+    }
+
+    .icon {
+      .flex-h-center;
+      .flex-align-center;
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+  }
+}

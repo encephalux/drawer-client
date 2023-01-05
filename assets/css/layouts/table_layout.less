@@ -1,0 +1,102 @@
+/** [Ova Assistant]
+ * Date: 2022-06-12 18:33:00
+ * Author: ova
+ * Description: 
+ */
+
+@import "../molecules/row_dock";
+
+@row-dock-cell-width: @dock-collapse-width + (2 * 8px) + 16px;
+@checkbox-cell-width: 42px;
+
+:root {
+  --row-dock-cell-width: @row-dock-cell-width;
+  --checkbox-cell-width: @checkbox-cell-width;
+}
+
+.@{project-class}.layout.table-layout {
+  padding: var(--default-padding);
+  padding-left: calc(var(--default-padding) + 8px);
+
+  > table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    thead {
+      .sticky(0);
+      z-index: 3;
+    }
+
+    td, th {
+      padding: 8px;
+      min-height: max(var(--row-dock-cell-width), var(--checkbox-cell-width));
+      white-space: nowrap;
+
+      &.checkbox-cell {
+        width: var(--checkbox-cell-width);
+
+        .checkbox {
+          padding: 0;
+        }
+      }
+
+      &.row-dock-cell {
+        .sticky();
+        top: unset;
+        right: 0;
+        z-index: 2;
+        min-width: var(--row-dock-cell-width);
+        border-right: solid 8px white;
+      }
+
+      &:not(.row-dock-cell):not(.checkbox-cell) {
+        min-width: 130px;
+        vertical-align: middle;
+      }
+    }
+
+    td {
+
+      &.row-dock-cell {
+        border-left: solid 8px rgba(0,0,0, 0);
+
+        > .inner {
+          .absolute(0, unset, 0, 0);
+          .flex-h-center;
+          .flex-align-center;
+          width: calc(var(--row-dock-cell-width) - 16px);
+        }
+      }
+    }
+
+    tr {
+
+      td:first-child, th:first-child {
+        border-top-left-radius: var(--default-border-radius);
+        border-bottom-left-radius: var(--default-border-radius);
+      }
+
+      td:nth-last-child(3), th:nth-last-child(2) {
+        border-top-right-radius: var(--default-border-radius);
+        border-bottom-right-radius: var(--default-border-radius);
+      }
+
+      &:first-child {
+
+        td.row-dock-cell > .inner {
+          border-top-left-radius: var(--default-border-radius);
+          border-top-right-radius: var(--default-border-radius);
+        }
+      }
+
+      &:last-child {
+
+        td.row-dock-cell > .inner {
+          border-bottom-left-radius: var(--default-border-radius);
+          border-bottom-right-radius: var(--default-border-radius);
+        }
+      }
+    }
+  }
+}

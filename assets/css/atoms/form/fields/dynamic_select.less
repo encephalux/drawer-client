@@ -1,0 +1,237 @@
+/** [Ova Assistant]
+ * Date: 2022-06-19 01:27:51
+ * Author: ova
+ * Description: 
+ */
+
+@import "field";
+@import "../../button";
+@import "../../../ova/molecules/collapsible";
+@import "../../../molecules/data_list_navigator";
+
+@selector-max-height: 200px;
+@navigator-block-height: calc(32px + (2 * .333 * var(--default-padding)));
+@selector-block-max-height: calc(@selector-max-height + @navigator-block-height + (.666 * var(--default-padding)));
+
+@keyframes loading_ball_1 {
+  0% {
+    transform: scale(0);
+  }
+
+  20% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes loading_ball_2 {
+  0% {
+    transform: scale(0);
+  }
+
+  30% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes loading_ball_3 {
+  0% {
+    transform: scale(0);
+  }
+
+  60% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.@{project-class}.atom.field.dynamic-select {
+  .relative;
+  transition: all 0s .3s linear;
+
+  > .inner, > .inner > .base, > .inner > .base > .edition-block {
+    .flex-h;
+    .flex-align-center;
+  }
+
+  > .inner {
+
+    > .base {
+      width: 100%;
+
+      .edition-block {
+        width: 100%;
+        margin-right: 8px;
+
+        .cleaner {
+          display: none;
+          background: @light-background;
+
+          &.active {
+            display: flex;
+          }
+        }
+      }
+
+      .label {
+        width: 100%;
+        padding: 7px;
+        font-size: 1em;
+
+        &, &:focus {
+          background: transparent;
+          border: none;
+          outline: none;
+        }
+      }
+
+      .list-rocker {
+        background: @light-background;
+
+        > .inner {
+          .relative;
+
+          .expand-icon, .collapse-icon {
+            .flex-h-center;
+            .flex-align-center;
+          }
+
+          .expand-icon {
+            .absolute;
+          }
+        }
+
+        .fi {
+          transform-origin: 50% 50%;
+          transition: transform .3s cubic-bezier(.17,.67,.48,1.37); //cubic-bezier(.17,.67,.47,1.25);
+          transform: scale(0) rotate(180deg);
+        }
+
+        &:not(.expand) .collapse-icon .fi {
+          transform: scale(1) rotate(0deg);
+        }
+
+        &.expand .expand-icon .fi {
+          transform: scale(1) rotate(0deg);
+        }
+      }
+    }
+
+    > .selector-block {
+      .absolute(100%, unset, 0, unset);
+      z-index: 3;
+      max-width: 90%;
+      border-radius: var(--default-border-radius);
+      transition: padding .11s ease-out;
+
+      > .inner {
+        background: white;
+        max-height: @selector-block-max-height;
+        padding-bottom: calc(.666 * var(--default-padding));
+        border-radius: var(--default-border-radius);
+        box-shadow: 0 0 19px rgba(0,0,0, .1258);
+
+        .navigator-block {
+          .flex-h-end;
+          padding: calc(.333 * var(--default-padding)) calc(.666 * var(--default-padding)) 0;
+          margin-bottom: calc(.333 * var(--default-padding));
+
+          .button {
+            background: @light-background;
+          }
+        }
+
+        .selector {
+          max-width: 100%;
+          max-height: @selector-max-height;
+          overflow-x: hidden;
+          overflow-y: auto;
+
+          > .inner {
+            padding: 0 calc(2 * var(--default-padding) / 3);
+          }
+        }
+      }
+
+      &.active {
+        padding: 8px;
+        transition: padding .11s ease-in;
+      }
+    }
+  }
+
+  &.expanded {
+
+    .selector-block {
+      padding: var(--default-padding);
+      box-sizing: content-box;
+    }
+  }
+
+  &.disabled {
+
+    .button {
+      cursor: default;
+      opacity: .6;
+    }
+  }
+
+  > .loading-frame {
+    .absolute;
+    display: none;
+    background: @light-background;
+    border-radius: var(--default-border-radius);
+
+    &.active {
+      .flex-h-center;
+      .flex-align-center;
+    }
+
+    .ball {
+      .circle(5px);
+      flex-shrink: 0;
+      background: @primary;
+      margin: 0 4px;
+    }
+
+    each(range(3), {
+      .ball:nth-child(@{value}) {
+        animation-name: e("loading_ball_@{value}");
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+      }
+    });
+  }
+}

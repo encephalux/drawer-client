@@ -1,0 +1,29 @@
+include ../main_menu
+
++main-menu
+    .block.group-title Demandes et Établissements
+    +menu-item(data-target="notifications").selected Notifications
+    +menu-item(data-target="requests") Demandes
+    +menu-item(data-target="establishments") Établissements
+
+    .block.group-title Zone Géographiques
+    +menu-item(data-target="administration_regions") Régions administratives
+    +menu-item(data-target="prefectures") Préfectures
+    +menu-item(data-target="towns") Communes
+    +menu-item(data-target="towns_ships") Cantons
+    +menu-item(data-target="health_regions") Régions sanitaires
+    +menu-item(data-target="health_districts") Districts sanitaires
+
+    .block.group-title Paramètres des demandes
+    +menu-item(data-target="establishments_types") Types d'établissements
+    +menu-item(data-target="requests_types") Types de demandes
+    +menu-item(data-target="requests_steps") Étapes de demandes
+    +menu-item(data-target="required_documents") Documents à fournir
+    +menu-item(data-target="inspections_types") Types d'inspections
+    +menu-item(data-target="legal_forms") Formes juridiques
+    +menu-item(data-target="functions") Fonctions
+    +menu-item(data-target="diplomas") Diplômes
+
+    .block.group-title Accès
+    +menu-item(data-target="administrators") Administrateurs
+    +menu-item(data-target="profile") Mon compte
