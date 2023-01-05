@@ -1,7 +1,6 @@
 extends templates/page
 include atoms/button
 include atoms/push_button
-include molecules/description_banner
 include molecules/loading_frame
 
 block append head
@@ -11,7 +10,6 @@ block append head
         window.env.payload = !{JSON.stringify(payload)};
 
 block append body
-    include molecules/header
     +description-banner
         h1.title Confirmation d'email
         if token
@@ -36,8 +34,6 @@ block append body
                     p Veuillez vous connecter pour en obtenir un nouveau
                     .action
                         +button(href=`/${lang}/user/login`).filled.primary Se connecter
-
-    include molecules/footer
 
 block append scripts
     script(type="text/javascript" src="/assets/js/releases/email_confirmation.min.js")
